@@ -1,0 +1,14 @@
+{
+  "name": "@fantasyarcade/ready-memory-disk-image",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Frame",
+  "license": "MIT",
+  "dependencies": {
+    "@fantasyarcade/uint8array-utils": "^1.1.0"
+  }
+}
