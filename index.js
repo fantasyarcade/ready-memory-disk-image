@@ -23,7 +23,7 @@ exports.createInitialDiskImage = function(blockSize, blockCount, fsType) {
     writeUint32BE(bytes, OffsetBlockSize, blockSize);
     writeUint32BE(bytes, OffsetBlockCount, blockCount);
     writeUint32BE(bytes, OffsetFileSystemType, fsType);
-    return new MemoryDisk(bytes);
+    return new MemoryDiskImage(bytes);
 }
 
 exports.validateDiskImageBytes = function(bytes) {
@@ -31,10 +31,10 @@ exports.validateDiskImageBytes = function(bytes) {
 }
 
 exports.parseDiskImage = function(bytes) {
-    return new MemoryDisk(bytes);
+    return new MemoryDiskImage(bytes);
 }
 
-class MemoryDisk {
+class MemoryDiskImage {
     constructor(data) {
         this._blockSize = readUint32BE(bytes, OffsetBlockSize);
         this._blockCount = readUint32BE(bytes, OffsetBlockCount);
